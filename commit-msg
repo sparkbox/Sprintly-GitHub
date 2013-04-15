@@ -39,7 +39,7 @@ def process(commit_msg_path):
         items_string = ' '.join(map(lambda x: 'References #' + str(x) + '.', items))
 
         # create new commit message
-        new_commit_msg = items_string + ' ' + commit_msg
+        new_commit_msg = commit_msg + "\n" + items_string
 
     # save it (overwrite existing)
     commit_msg_file = open(commit_msg_path, 'w')
